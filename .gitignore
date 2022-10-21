@@ -1,0 +1,4 @@
+output/*.rds
+output/*.png
+
+*.html

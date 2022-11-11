@@ -24,12 +24,18 @@ output/fig1.png: code/04_fig1.r output/project_data4.rds
 	
 output/map1.png: code/05_map1.r output/project_data4.rds output/world_map2.RData
 	rscript code/05_map1.r
-  
+
+.PHONY: install
+install: 
+	rscript -e 'renv::restore(prompt = FALSE)'
+
 .PHONY: prepare.data
-prepare.data: output/project_data2.rds output/project_data3.rds output/project_data4.rds output/world_map.rds output/world_map2.RData
+prepare.data: 
+	output/project_data2.rds output/project_data3.rds output/project_data4.rds output/world_map.rds output/world_map2.RData
   
 .PHONY: descript.analysis
-descript.analysis: output/table1.rds output/fig1.png 
+descript.analysis: 
+	output/table1.rds output/fig1.png 
 #output/map1.png
 
 .PHONY: clean

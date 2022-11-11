@@ -12,7 +12,9 @@ This repository contains the analysis in which we will investigate the relations
 __The Main Project Folder__
 * the *final_project.rmd*
 * the *makefile*
-* *.gitignore*
+* *.gitignore* file
+* *renv* directory
+* *renv.lock* file
 * the destination for the rendered *final_project.html*
 
 __The raw_data Folder__

@@ -1,11 +1,11 @@
-library(tidyverse)
-library(dplyr)
-library(labelled)
-library(sjlabelled)
-library(gtsummary)
-library(ggplot2)
-library(parameters)
-library(kableExtra)
+pacman::p_load(tidyverse, 
+               dplyr, 
+               labelled, 
+               sjlabelled, 
+               gtsummary, 
+               ggplot2, 
+               parameters, 
+               kableExtra)
 
 here::i_am('code/04_fig1.r')
 

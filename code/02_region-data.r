@@ -1,11 +1,11 @@
-library(tidyverse)
-library(dplyr)
-library(labelled)
-library(sjlabelled)
-library(gtsummary)
-library(ggplot2)
-library(parameters)
-library(kableExtra)
+pacman::p_load(tidyverse, 
+               dplyr, 
+               labelled, 
+               sjlabelled, 
+               gtsummary, 
+               ggplot2, 
+               parameters, 
+               kableExtra)
 
 here::i_am('code/02_region-data.r')
 
@@ -16,7 +16,7 @@ project.data3 <- readRDS(
 #reorganizing data
 
 drop3 <- c("Country", "north.america", "central.america", "south.america", 
-           "europe", "africa", "asia", "middle.east", "oceania")
+           "europe", "africa", "asia", "oceania")
 project.data3 <- project.data3[,!(names(project.data3) %in% drop3)]
 
 #adding summary variables

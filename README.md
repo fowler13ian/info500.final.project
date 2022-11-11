@@ -24,15 +24,20 @@ __The code Folder__
 * *02_region-data.r*        
 * *03_table1.r*         
 * *04_fig1.r*
+* *05_map1.r*
 * *render_report.r*
 
 __The output Folder__
-* the destination for clean and segmented *code.rds*, *table1.rds*, & *fig1.png*
+* the destination for clean and segmented *code.rds*, *table1.rds*, *fig1.png*, & *map1.png*
 
 ### Rendering the Report
 
-The code for producing *table1.rds* and *fig1.png* are located within the __code__ folder and are labeled *03_table1.r* and *04_fig1.r* respectively
+The code for producing *table1.rds*, *fig1.png*, and *map1.png* are located within the __code__ folder and are labeled *03_table1.r*, *04_fig1.r*, *05_map1.r* respectively
 
 The *final_project.html* will render if the __"make"__ command is entered into the terminal
 
 The __"make clean"__ command will remove all contents of the __output__ folder and the rendered report
+
+### Warning
+
+As of now, the code for rendering *map1.png* is broken and has been omitted from the final_project report

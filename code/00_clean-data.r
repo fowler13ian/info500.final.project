@@ -1,21 +1,33 @@
-library(tidyverse)
-library(dplyr)
-library(labelled)
-library(sjlabelled)
-library(gtsummary)
-library(ggplot2)
-library(parameters)
-library(kableExtra)
+pacman::p_load(tidyverse, 
+               dplyr, 
+               labelled, 
+               sjlabelled, 
+               gtsummary, 
+               ggplot2, 
+               parameters, 
+               kableExtra,
+               tmap,
+               sf)
 
 #loading data
 
 here::i_am('code/00_clean-data.r')
 
-project.data <- read.csv(here::here('raw_data/archive/data.csv'))
+project.data <- read.csv(
+  here::here('raw_data/archive/data.csv')
+)
 
 saveRDS(
   project.data,
   here::here("output/project_data1.rds")
+)
+
+data('World')
+world.map <- World
+
+saveRDS(
+  world.map,
+  here::here("output/world_map.rds")
 )
 
 #cleaning data

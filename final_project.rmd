@@ -10,14 +10,15 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
-library(tidyverse)
-library(dplyr)
-library(labelled)
-library(sjlabelled)
-library(gtsummary)
-library(ggplot2)
-library(parameters)
-library(kableExtra)
+pacman::p_load(tidyverse, 
+               dplyr, 
+               labelled, 
+               sjlabelled, 
+               gtsummary, 
+               ggplot2, 
+               parameters, 
+               kableExtra,
+               tmap)
 ```
 
 ```{r, echo = FALSE}
@@ -36,6 +37,10 @@ table1 <- readRDS(
 fig1 <- readRDS(
   here::here("output/fig1.png")
 )
+
+#map1 <- readRDS(
+#  here::here("output/map1.png")
+#)
 ```
 
 ## Introduction
@@ -46,7 +51,7 @@ In this analysis we will investigate the relationships between __geographic regi
 
 ## Data Aggregation
 
-The data from the data set listed at the country level with daily cumulative case and death counts, For the analysis, the country level data was aggregated to the regional level with 8 defined regions (**North America**, **Central America & the Caribbean**, **South America**, **Europe**, **Africa**, **Middle East**, **Asia**, and **Oceania**) in order to compare case and death counts between regions (using nominal variables). 
+The data from the data set listed at the country level with daily cumulative case and death counts, For the analysis, the country level data was aggregated to the regional level with 8 defined regions (**North America**, **Central America & the Caribbean**, **South America**, **Europe**, **Africa**, **Asia**, and **Oceania**) in order to compare case and death counts between regions (using nominal variables). 
 
 The total case and death counts were also calculated for each of the regions for further analysis.
 
@@ -54,13 +59,17 @@ The total case and death counts were also calculated for each of the regions for
 
 The data calculated by the regional aggregation is described below in the following table and plot. The total number of cases and deaths per region is shown and the correlation between number of cases and number of deaths is illustrated.
 
+### Table 1
+
 ```{r}
 table1
 ```
 
 <center>
-*(1)North America (2)Central America & the Caribbean (3)South America (4)Europe (5)Africa (6)Middle East (7)Asia (8)Oceania*
+*(1)North America (2)Central America & the Caribbean (3)South America (4)Europe (5)Africa (6)Asia (&)Oceania*
 <center>
+
+### Figure 1
 
 ```{r}
 #| fig.align = "center",
@@ -69,3 +78,15 @@ fig1
 ```
 
 The plot shows the __total number of cases__ for each region along the x-axis with the __total number of deaths__ for each region described by the color gradient.
+
+### Map 1
+
+```{r}
+#| fig.align = "center",
+#| out.width = "700px"
+#map1
+```
+
+The map about shows the __total number of cases__ for each region geographically. 
+
+*Note: the North American and Central American regions were aggregated to match available spatial data*

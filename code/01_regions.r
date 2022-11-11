@@ -1,11 +1,11 @@
-library(tidyverse)
-library(dplyr)
-library(labelled)
-library(sjlabelled)
-library(gtsummary)
-library(ggplot2)
-library(parameters)
-library(kableExtra)
+pacman::p_load(tidyverse, 
+               dplyr, 
+               labelled, 
+               sjlabelled, 
+               gtsummary, 
+               ggplot2, 
+               parameters, 
+               kableExtra)
 
 here::i_am('code/01_regions.r')
 
@@ -126,24 +126,6 @@ project.data2$europe <- ifelse(project.data2$Country == "Austria" |
                                  project.data2$Country == "United Kingdom",
                                 1, 0)
 
-project.data2$middle.east <- ifelse(project.data2$Country == "Bahrain" |
-                                      project.data2$Country == "Cyprus" |
-                                      project.data2$Country == "Iran" |
-                                      project.data2$Country == "Iran, Islamic Republic" |
-                                      project.data2$Country == "Iraq" |
-                                      project.data2$Country == "Israel" |
-                                      project.data2$Country == "Jordan" |
-                                      project.data2$Country == "Kuwait" |
-                                      project.data2$Country == "Lebanon" |
-                                      project.data2$Country == "Oman" |
-                                      project.data2$Country == "Qatar" |
-                                      project.data2$Country == "Saudi Arabia" |
-                                      project.data2$Country == "Turkey" |
-                                      project.data2$Country == "United Arab Emirates" |
-                                      project.data2$Country == "West Bank and Gaza Strip" |
-                                      project.data2$Country == "Yemen",
-                                     1, 0)
-
 project.data2$asia <- ifelse(project.data2$Country == "Bangladesh" |
                                project.data2$Country == "Brunei Darussalam" |
                                project.data2$Country == "Cambodia" |
@@ -163,7 +145,23 @@ project.data2$asia <- ifelse(project.data2$Country == "Bangladesh" |
                                project.data2$Country == "Singapore" |
                                project.data2$Country == "Sri Lanka" |
                                project.data2$Country == "Thailand" |
-                               project.data2$Country == "Viet Nam",
+                               project.data2$Country == "Viet Nam" |
+                               project.data2$Country == "Bahrain" |
+                               project.data2$Country == "Cyprus" |
+                               project.data2$Country == "Iran" |
+                               project.data2$Country == "Iran, Islamic Republic" |
+                               project.data2$Country == "Iraq" |
+                               project.data2$Country == "Israel" |
+                               project.data2$Country == "Jordan" |
+                               project.data2$Country == "Kuwait" |
+                               project.data2$Country == "Lebanon" |
+                               project.data2$Country == "Oman" |
+                               project.data2$Country == "Qatar" |
+                               project.data2$Country == "Saudi Arabia" |
+                               project.data2$Country == "Turkey" |
+                               project.data2$Country == "United Arab Emirates" |
+                               project.data2$Country == "West Bank and Gaza Strip" |
+                               project.data2$Country == "Yemen",
                               1, 0)
 
 #creating categorical variable
@@ -173,8 +171,7 @@ project.data2 <- mutate(project.data2, region = ifelse(north.america == 1, 1,
                                               ifelse(south.america == 1, 3,
                                                      ifelse(europe == 1, 4,
                                                             ifelse(africa == 1, 5,
-                                                                   ifelse(middle.east == 1, 6,
-                                                                          ifelse(asia == 1, 7, 8))))))))
+                                                                   ifelse(asia == 1, 6, 7)))))))
 
 #relabeling variables
 
@@ -188,7 +185,6 @@ var_label(project.data2) <- list(
   europe = "Europe",
   africa = "Africa",
   asia = "Asia",
-  middle.east = "Middle East",
   oceania = "Oceania",
   region = "Geographic Region"
 )
@@ -198,6 +194,28 @@ project.data3 <- project.data2
 saveRDS(
   project.data3,
   here::here("output/project_data3.rds")
+)
+
+#categorial variable in world.map
+
+world.map <- readRDS(
+  here::here("output/world_map.rds")
+)
+
+world.map2 <- mutate(world.map, 
+              region = ifelse(continent == 'North America', 1,
+                              ifelse(continent == 'South America', 3,
+                                     ifelse(continent == 'Europe', 4,
+                                            ifelse(continent == 'Africa', 5,
+                                                   ifelse(continent == 'Asia', 6,
+                                                          ifelse(continent == 'Oceania', 7, 0)))))))
+
+world.map2 <- world.map2 %>%
+              select('region', 'geometry')
+
+save(
+  world.map2,
+  file = here::here("output/world_map2.RData")
 )
 
 print("indicators complete")

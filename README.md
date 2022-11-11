@@ -34,7 +34,7 @@ __The output Folder__
 
 ### Activating RENV: accessing necessary packages
 
-To download/update the packages necessary to render the report, input the __*make install*__ command into the terminal
+To download/update the packages necessary to render the report, input the __"make install"__ command into the terminal
 
 ### Rendering the Report
 

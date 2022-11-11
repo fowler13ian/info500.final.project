@@ -32,6 +32,10 @@ __The code Folder__
 __The output Folder__
 * the destination for clean and segmented *code.rds*, *table1.rds*, *fig1.png*, & *map1.png*
 
+### Activating RENV: accessing necessary packages
+
+To download/update the packages necessary to render the report, input the __*make install*__ command into the terminal
+
 ### Rendering the Report
 
 The code for producing *table1.rds*, *fig1.png*, and *map1.png* are located within the __code__ folder and are labeled *03_table1.r*, *04_fig1.r*, *05_map1.r* respectively

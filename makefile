@@ -27,12 +27,10 @@ install:
 	rscript -e 'renv::restore(prompt = FALSE)'
 
 .PHONY: prepare.data
-prepare.data: 
-	output/project_data1.rds output/project_data2.rds output/project_data3.rds output/project_data4.rds
+prepare.data: output/project_data1.rds output/project_data2.rds output/project_data3.rds output/project_data4.rds
   
 .PHONY: descript.analysis
-descript.analysis: 
-	output/table1.rds output/fig1.png 
+descript.analysis: output/table1.rds output/fig1.png 
 
 .PHONY: clean
 clean:

@@ -37,10 +37,6 @@ table1 <- readRDS(
 fig1 <- readRDS(
   here::here("output/fig1.png")
 )
-
-#map1 <- readRDS(
-#  here::here("output/map1.png")
-#)
 ```
 
 ## Introduction
@@ -79,14 +75,3 @@ fig1
 
 The plot shows the __total number of cases__ for each region along the x-axis with the __total number of deaths__ for each region described by the color gradient.
 
-### Map 1
-
-```{r}
-#| fig.align = "center",
-#| out.width = "700px"
-#map1
-```
-
-The map about shows the __total number of cases__ for each region geographically. 
-
-*Note: the North American and Central American regions were aggregated to match available spatial data*

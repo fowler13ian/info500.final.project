@@ -5,9 +5,7 @@ pacman::p_load(tidyverse,
                gtsummary, 
                ggplot2, 
                parameters, 
-               kableExtra,
-               tmap,
-               sf)
+               kableExtra)
 
 #loading data
 
@@ -20,14 +18,6 @@ project.data <- read.csv(
 saveRDS(
   project.data,
   here::here("output/project_data1.rds")
-)
-
-data('World')
-world.map <- World
-
-saveRDS(
-  world.map,
-  here::here("output/world_map.rds")
 )
 
 #cleaning data

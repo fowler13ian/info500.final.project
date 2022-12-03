@@ -196,26 +196,4 @@ saveRDS(
   here::here("output/project_data3.rds")
 )
 
-#categorial variable in world.map
-
-world.map <- readRDS(
-  here::here("output/world_map.rds")
-)
-
-world.map2 <- mutate(world.map, 
-              region = ifelse(continent == 'North America', 1,
-                              ifelse(continent == 'South America', 3,
-                                     ifelse(continent == 'Europe', 4,
-                                            ifelse(continent == 'Africa', 5,
-                                                   ifelse(continent == 'Asia', 6,
-                                                          ifelse(continent == 'Oceania', 7, 0)))))))
-
-world.map2 <- world.map2 %>%
-              select('region', 'geometry')
-
-save(
-  world.map2,
-  file = here::here("output/world_map2.RData")
-)
-
 print("indicators complete")

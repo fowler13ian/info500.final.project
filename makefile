@@ -41,4 +41,4 @@ project_image: Dockerfile $(project_files) $(renv_files)
 	touch $@ project_image
 	
 final_report/INFO550_FinalProject_IanFowler.html: 
-	docker build -v "$$(pwd)/final_report":/final_project/final_report fowler13ian/final_project
+	docker run -v "/$$(pwd)/final_report":/final_project/final_report fowler13ian/final_project

@@ -1,6 +1,6 @@
 from rocker/r-ubuntu
 
-run apt-get update && apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev libgdal-dev libfontconfig1-dev libudunits2-dev
+run apt-get update && apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev libgdal-dev libfontconfig1-dev libudunits2-dev pandoc
 
 run mkdir /final_project
 workdir /final_project

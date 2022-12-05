@@ -17,7 +17,8 @@ copy renv/settings.dcf renv
 copy renv/activate.R renv
 
 run mkdir raw_data
-copy raw_data/archive/data.csv raw_data
+run mkdir raw_data/archive
+copy raw_data/archive/data.csv raw_data/archive
 
 run mkdir code
 copy code/*.r code 

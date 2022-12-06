@@ -63,12 +63,3 @@ The code for producing *table1.rds*, *fig1.png*, and *map1.png* are located with
 The *final_project.html* will render if the __"make"__ command is entered into the terminal
 
 The __"make clean"__ command will remove all contents of the __output__ folder and the rendered report
-
-### Operating the Container
-
-The repository includes a *Dockerfile* and instructions to fetch an image from *DockerHub* that will allow for the automatic generation of the report through a containerized Ubuntu system.
-
-Entering the __"make final_report/INFO550_FinalProject_IanFowler.html"__ command into the terminal will automatically generate the *INFO550_FinalProject_IanFowler.html* report in the __final_report__ folder
-
-Additionally, the __"make project_image"__ command will build a replica of the image from *DockerHub* on your local computer
-**NOTE: this step is not necessary to automatically build the report**

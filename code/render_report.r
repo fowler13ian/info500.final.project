@@ -3,6 +3,6 @@ here::i_am(
 )
 
 rmarkdown::render(
-  here::here("final_project.Rmd"),
+  here::here("final_project.rmd"),
   output_file = 'INFO550_FinalProject_IanFowler.html'
 )

@@ -22,7 +22,7 @@ pacman::p_load(tidyverse,
 ```
 
 ```{r, echo = FALSE}
-here::i_am('final_project.Rmd')
+here::i_am('final_project.rmd')
 ```
 
 ```{r, echo = FALSE}

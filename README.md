@@ -43,11 +43,11 @@ __The final_report Folder__
 
 *for Mac OS using Intel Chip*
 
-The repository includes a *Dockerfile* and instructions to fetch an image from *DockerHub* that will allow for the automatic generation of the report through a containerized Ubuntu system.
+The repository includes a *Dockerfile* and instructions to fetch an image from [DockerHub] (https://hub.docker.com/repository/docker/fowler13ian/final_project) that will allow for the automatic generation of the report through a containerized Ubuntu system.
 
 Entering the __"make final_report/INFO550_FinalProject_IanFowler.html"__ command into the terminal will automatically generate the *INFO550_FinalProject_IanFowler.html* report in the __final_report__ folder
 
-Additionally, the __"make project_image"__ command will build a replica of the image from *DockerHub* on your local computer
+Additionally, the __"make project_image"__ command will build a replica of the image from [DockerHub] (https://hub.docker.com/repository/docker/fowler13ian/final_project) on your local computer
 **NOTE: this step is not necessary to automatically build the report**
 
 ## Generating the Report Locally
